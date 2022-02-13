@@ -1,7 +1,7 @@
-const Home  = ({}) => {
+const Home = () => {
   return (
     <div>
-      <h1>Home component</h1>
+      <h1>HOME COMPONENT</h1>;
     </div>
   );
 };
