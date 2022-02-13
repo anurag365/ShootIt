@@ -81,6 +81,7 @@ const Signup = () => {
                         color="primary"
                         variant="contained"
                         className="mt-3 wt-50"
+                        type="submit"
                       >
                         Register
                       </Button>
