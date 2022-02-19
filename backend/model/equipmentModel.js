@@ -2,7 +2,7 @@ const { Schema } = require('mongoose')
 const mongoose = require('../connection')
 
 
- const schema = new mongoose.Schema({
+ const schem = new mongoose.Schema({
     tags:String,
     rentableField: {type: Boolean},
     thumbnail: String,
