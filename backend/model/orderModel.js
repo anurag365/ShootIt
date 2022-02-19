@@ -2,7 +2,7 @@ const { Schema } = require('mongoose')
 const mongoose = require('../connection')
 
 
- const schema = new mongoose.Schema({
+ const schem = new mongoose.Schema({
     user:{type:mongoose.Types.ObjectId, ref:"users"},
     equipment:{type:mongoose.Types.ObjectId, ref:"equipmentModel"},
     amount: Boolean  
