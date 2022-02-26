@@ -1,16 +1,34 @@
-import React from 'react'
-import { Formik } from 'formik'
-import { Button, TextField } from '@mui/material'
+import React from "react";
+import { Formik } from "formik";
+import { Button, TextField } from "@mui/material";
+import app_config from "../../config";
+import Swal from "sweetalert2";
 
 const AddEquipment = () => {
-    const equipmentform = {
-        title: "",
-        tags: "",
-        thumbnail: "",
-        description: "",
-        rentableField : false,
-    };
+  const url = app_config.api_url;
+  const equipmentform = {
+    title: "",
+    tags: "",
+    thumbnail: "",
+    description: "",
+    rentableField: false,
+  };
 
+  const submitEquipment = (values) => {
+    fetch(url + "/equipment/add", {
+      method: "POST",
+      body: JSON.stringify(values),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        Swal.fire({
+          icon: "success",
+          title: "Registered Successfully!!",
+        });
+      });
+  };
 
   return (
     <div class="container mt-5">
@@ -27,7 +45,7 @@ const AddEquipment = () => {
 
               <hr />
 
-              <Formik initialValues={equipmentform} onSubmit={formSubmit}>
+              <Formik initialValues={equipmentform} onSubmit={submitEquipment}>
                 {({ values, handleSubmit, handleChange }) => (
                   <form onSubmit={handleSubmit}>
                     <TextField
@@ -72,7 +90,6 @@ const AddEquipment = () => {
                       onChange={handleChange}
                       value={values.rentablefield}
                     ></TextField>
-                    
 
                     <Button
                       type="submit"
@@ -82,8 +99,6 @@ const AddEquipment = () => {
                     >
                       Add Equipment
                     </Button>
-
-                    
                   </form>
                 )}
               </Formik>
@@ -92,7 +107,7 @@ const AddEquipment = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default AddEquipment;
