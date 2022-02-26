@@ -6,10 +6,10 @@ import Header from "../main/header";
 const UserDashboard = () =>{
     return (
         <>
-        <Header />
-        <Outlet />
-        <Footer />
-        </>
+            <Header />
+            <Outlet />
+            <Footer />
+            </>
     )
 };
 export default UserDashboard;

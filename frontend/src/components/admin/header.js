@@ -3,7 +3,11 @@ const Header = () => {
         <>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
+<<<<<<< HEAD
     <a class="navbar-brand" href="#">ShootIt</a>
+=======
+    <a class="navbar-brand" href="#">ShOOtit</a>
+>>>>>>> cea10b6507dbfcf87c4e219188fc2b9086d52ea6
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
