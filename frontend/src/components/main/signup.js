@@ -23,7 +23,7 @@ const Signup = () => {
             <div className="col-md">
               <div className="card-body my-card-body">
                 <p className="h3">Welcome..!</p>
-                <p className="text-muted">TO ART & CRAFT</p>
+                <p className="text-muted">TO ShootIt</p>
                 <hr />
                 <Formik initialValues={signupform} onSubmit={signupSubmit}>
                   {({ values, handleChange, handleSubmit }) => (
