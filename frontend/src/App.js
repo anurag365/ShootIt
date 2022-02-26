@@ -4,6 +4,7 @@ import Main from "./components/main";
 import Home from "./components/main/home";
 import SignUp from "./components/main/signup";
 import AddEquipment from "./components/admin/addEquipment";
+import Admin from "./components/admin";
 
 function App() {
   return (
@@ -15,9 +16,9 @@ function App() {
             <Route element ={<SignUp/>} path ="signup"/>
             <Route element ={<AddEquipment/>} path ="addEquiment"/>
           </Route>
-          {/* <Route element={<Admin />} path="admin">
-            <Route element={<AdminDashboard />} path="dashboard" />
-          </Route> */}
+          <Route element={<Admin />} path="admin">     
+          <Route element ={<AddEquipment/>} path ="addEquiment"/>
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
