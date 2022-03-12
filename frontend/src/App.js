@@ -20,6 +20,7 @@ function App() {
           </Route>
           <Route element={<Admin />} path="admin">
             <Route element={<AddEquipment />} path="addEquipment" />
+            <Route element={<BrowseEquipment />} path="browseEquipment" />
           </Route>
           <Route exact element={<Navigate to="/main/home" />} path="" />
         </Routes>
