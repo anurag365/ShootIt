@@ -8,7 +8,6 @@ import Admin from "./components/admin";
 import Login from "./components/main/login";
 import BrowseEquipment from "./components/main/browseEquipment";
 
-
 function App() {
   return (
     <div>
@@ -18,10 +17,16 @@ function App() {
             <Route element={<Home />} path="home" />
             <Route element={<SignUp />} path="signup" />
             <Route element={<Login />} path="login" />
+<<<<<<< HEAD
             <Route element={<AddEquipment />} path="addEquiment" />
           </Route>
           <Route element={<Admin />} path="admin">
             <Route element={<AddEquipment />} path="addEquiment" />
+=======
+          </Route>
+          <Route element={<Admin />} path="admin">
+            <Route element={<AddEquipment />} path="addEquipment" />
+>>>>>>> 37b7dc55ca5d90c0496f92bccabafba9fecec158
             <Route element={<BrowseEquipment />} path="browseEquipment" />
           </Route>
           <Route exact element={<Navigate to="/main/home" />} path="" />

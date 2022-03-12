@@ -1,4 +1,3 @@
-import React from "react";
 import { Formik } from "formik";
 import { Button, TextField } from "@mui/material";
 import app_config from "../../config";
@@ -110,4 +109,8 @@ const AddEquipment = () => {
   );
 };
 
+<<<<<<< HEAD
 export default AddEquipment;
+=======
+export default AddEquipment;
+>>>>>>> 37b7dc55ca5d90c0496f92bccabafba9fecec158
