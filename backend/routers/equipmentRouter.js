@@ -1,11 +1,11 @@
-const Model = require("../models/userModel");
+const Model = require("../models/equipmentModel");
 const router = require("express").Router();
 
 router.post("/add", (req, res) => {
   new Model(req.body)
     .save()
     .then((data) => {
-      console.log("user data saved!!");
+      console.log("equipment data saved!!");
       res.status(200).json(data);
     })
     .catch((err) => {
@@ -17,7 +17,7 @@ router.post("/add", (req, res) => {
 router.get("/getall", (req, res) => {
   Model.find({})
     .then((data) => {
-      console.log("user data fetched !!");
+      console.log("equipment data fetched!!");
       res.status(200).json(data);
     })
     .catch((err) => {
@@ -29,7 +29,7 @@ router.get("/getall", (req, res) => {
 router.get("/getbyid/:id", (req, res) => {
   Model.findById(req.params.id)
     .then((data) => {
-      console.log("user data saved by Id!!");
+      console.log("equipment data fetched by id!!");
       res.status(200).json(data);
     })
     .catch((err) => {
