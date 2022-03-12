@@ -17,10 +17,10 @@ function App() {
             <Route element={<Home />} path="home" />
             <Route element={<SignUp />} path="signup" />
             <Route element={<Login />} path="login" />
+            <Route element={<BrowseEquipment />} path="browseEquipment" />
           </Route>
           <Route element={<Admin />} path="admin">
             <Route element={<AddEquipment />} path="addEquipment" />
-            <Route element={<BrowseEquipment />} path="browseEquipment" />
           </Route>
           <Route exact element={<Navigate to="/main/home" />} path="" />
         </Routes>

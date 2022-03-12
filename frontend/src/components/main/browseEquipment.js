@@ -1,95 +1,74 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Formik } from 'formik'
-import { Button, TextField } from '@mui/material'
+import { Button, Card, CardContent, CardMedia, Grid, Paper, TextField } from '@mui/material'
 import app_config from '../../config';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const BrowseEquipment = () => {
+
   const url = app_config.api_url;
-    const equipmentform = {
-        title: "",
-        tags: "",
-        thumbnail: "",
-        description: "",
-        rentableField : false,
-    };
 
-    const searchEquipment = (values) => {
-      fetch(url + "/equipment/add", {
-        method: "POST",
-        body: JSON.stringify(values),
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          Swal.fire({
-            icon: "success",
-            title: "Registered Successfully!!",
-          });
-        });
-    };
+  const [equipmentData, setEquipmentData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  const fetchEquipment = () => {
+    fetch(url + "/equipment/getall")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setEquipmentData(data);
+        setLoading(false);
+      });
+  };
+
+  const displayEquipment = () => {
+    if (!loading) {
+      return (
+        <Grid container spacing={5}>
+          {equipmentData.map((equipment) => (
+            <Grid item md={3}>
+              <Card>
+                <CardMedia
+                  component="img"
+                  image={url + "/" + equipment.thumbnail}
+                  height="200"
+                />
+                <CardContent>
+                  <h4>{equipment.title}</h4>
+                  <p>{equipment.description}</p>
+                  <Link
+                    to={"/view/" + equipment._id}
+                    component={Button}
+                    variant="contained"
+                    color="primary"
+                  >
+                    View Equipment
+                  </Link>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      );
+    }
+  };
+
+  useEffect(() => {
+    
+    fetchEquipment();
+  }, []);
 
   return (
-    <div class="container mt-5">
-      <div class="card">
-        <div class="row">
-          <div class="col-md">
-            <div class="img-back"></div>
-          </div>
-
-          <div class="col-md">
-            <div class="card-body my-card-body">
-              <p class="h3">Search Equipment</p>
-              <p class="text-muted">Search equipment here</p>
-
-              <hr />
-
-              <Formik initialValues={equipmentform} onSubmit={searchEquipment}>
-                {({ values, handleSubmit, handleChange }) => (
-                  <form onSubmit={handleSubmit}>
-                    <TextField
-                      className="w-100 mt-5"
-                      variant="filled"
-                      id="title"
-                      type="text"
-                      label="Equipment Name"
-                      onChange={handleChange}
-                      value={values.title}
-                    />
-
-                    <TextField
-                      className="w-100 mt-3"
-                      id="type"
-                      type="text"
-                      label="Type"
-                      onChange={handleChange}
-                      value={values.tags}
-                    ></TextField>
-                    
-                   
-                    
-
-                    <Button
-                      type="submit"
-                      color="primary"
-                      variant="contained"
-                      className="mt-5 w-50"
-                    >
-                      Search Equipment
-                    </Button>
-
-                    
-                  </form>
-                )}
-              </Formik>
-            </div>
-          </div>
-        </div>
+    <Paper style={{ height: "100vh" }}>
+      <div className="container">
+        <h1>Equipment List</h1>
+        <Grid container spacing={2}>
+          {displayEquipment()}
+        </Grid>
       </div>
-    </div>
-  )
+    </Paper>
+  );
 }
 
 export default BrowseEquipment;
