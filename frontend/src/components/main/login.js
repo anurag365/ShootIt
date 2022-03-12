@@ -61,8 +61,4 @@ const Login = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Login;
-=======
-export default Login;
->>>>>>> 37b7dc55ca5d90c0496f92bccabafba9fecec158

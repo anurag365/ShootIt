@@ -109,8 +109,4 @@ const AddEquipment = () => {
   );
 };
 
-<<<<<<< HEAD
 export default AddEquipment;
-=======
-export default AddEquipment;
->>>>>>> 37b7dc55ca5d90c0496f92bccabafba9fecec158
