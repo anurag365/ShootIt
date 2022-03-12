@@ -1,7 +1,10 @@
 import { Formik } from "formik";
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, Card, CardContent } from "@mui/material";
 import app_config from "../../config";
 import Swal from "sweetalert2";
+import "./signup.css"
+import { NavLink } from "react-router-dom";
+
 
 const Signup = () => {
   const url = app_config.api_url;
@@ -14,6 +17,7 @@ const Signup = () => {
   };
 
   const signupSubmit = (values) => {
+    console.log(values)
     // 1. address
     // 2. method
     // 3. data
@@ -34,10 +38,13 @@ const Signup = () => {
       });
   };
 
+  
+
   return (
     <>
       <div className="container mt-5">
-        <div className="card">
+        <Card>
+          <CardContent>
           <div className="row">
             <div className="col-md">
               <div className="img-back"></div>
@@ -110,20 +117,21 @@ const Signup = () => {
                       >
                         Register
                       </Button>
-                      <a
-                        href="/login"
+                      <NavLink
+                        to="/main/login"
                         className="text-muted"
                         style={{ display: "block" }}
                       >
                         Already have an account?
-                      </a>
+                      </NavLink>
                     </form>
                   )}
                 </Formik>
               </div>
             </div>
           </div>
-        </div>
+          </CardContent>
+        </Card>
       </div>
     </>
   );

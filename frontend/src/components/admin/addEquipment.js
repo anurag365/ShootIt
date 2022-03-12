@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-import { Button, TextField } from '@mui/material';
-import { Formik } from 'formik';
-import React from 'react'
-=======
-import React from "react";
+
 import { Formik } from "formik";
 import { Button, TextField } from "@mui/material";
 import app_config from "../../config";
 import Swal from "sweetalert2";
->>>>>>> cea10b6507dbfcf87c4e219188fc2b9086d52ea6
 
 const AddEquipment = () => {
   const url = app_config.api_url;

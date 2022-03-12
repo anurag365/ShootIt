@@ -6,6 +6,7 @@ import SignUp from "./components/main/signup";
 import AddEquipment from "./components/admin/addEquipment";
 import Admin from "./components/admin";
 import Login from "./components/main/login";
+import BrowseEquipment from "./components/main/browseEquipment";
 
 function App() {
   return (
@@ -16,10 +17,10 @@ function App() {
             <Route element={<Home />} path="home" />
             <Route element={<SignUp />} path="signup" />
             <Route element={<Login />} path="login" />
-            <Route element={<AddEquipment />} path="addEquiment" />
+            <Route element={<BrowseEquipment />} path="browseEquipment" />
           </Route>
           <Route element={<Admin />} path="admin">
-            <Route element={<AddEquipment />} path="addEquiment" />
+            <Route element={<AddEquipment />} path="addEquipment" />
           </Route>
           <Route exact element={<Navigate to="/main/home" />} path="" />
         </Routes>

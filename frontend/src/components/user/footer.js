@@ -40,7 +40,7 @@ const Footer = () => {
   
         <div class="col-4 offset-1">
           <form>
-            <h5>Subscribe to our Art & Craft</h5>
+            <h5>Subscribe to our ShootIt</h5>
             <p>Monthly digest of whats new and exciting from us.</p>
             <div class="d-flex w-100 gap-2">
               <label for="newsletter1" class="visually-hidden">Email address</label>
