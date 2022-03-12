@@ -2,6 +2,7 @@ import { Formik } from "formik";
 import { TextField, Button } from "@mui/material";
 import app_config from "../../config";
 import Swal from "sweetalert2";
+import "./signup.css"
 
 const Signup = () => {
   const url = app_config.api_url;

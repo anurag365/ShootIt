@@ -16,10 +16,9 @@ function App() {
             <Route element={<Home />} path="home" />
             <Route element={<SignUp />} path="signup" />
             <Route element={<Login />} path="login" />
-            <Route element={<AddEquipment />} path="addEquiment" />
           </Route>
           <Route element={<Admin />} path="admin">
-            <Route element={<AddEquipment />} path="addEquiment" />
+            <Route element={<AddEquipment />} path="addEquipment" />
           </Route>
           <Route exact element={<Navigate to="/main/home" />} path="" />
         </Routes>

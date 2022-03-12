@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import AddEquipment from "./addEquipment";
 import Footer from "./footer";
 import Header from "./header";
 // import SignUp from "./signup";
