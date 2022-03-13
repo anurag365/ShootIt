@@ -7,6 +7,7 @@ import AddEquipment from "./components/admin/addEquipment";
 import Admin from "./components/admin";
 import Login from "./components/main/login";
 import BrowseEquipment from "./components/main/browseEquipment";
+import ViewEqiupment from "./components/main/viewEqiupment";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route element={<BrowseEquipment />} path="browseEquipment" />
           </Route>
           <Route element={<Admin />} path="admin">
+            
             <Route element={<AddEquipment />} path="addEquipment" />
           </Route>
           <Route exact element={<Navigate to="/main/home" />} path="" />
