@@ -1,7 +1,8 @@
 import { Formik } from "formik";
-import { Button, TextField } from "@mui/material";
+import { Button, Switch, TextField } from "@mui/material";
 import app_config from "../../config";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 const AddEquipment = () => {
   const url = app_config.api_url;
@@ -13,7 +14,11 @@ const AddEquipment = () => {
     rentableField: false,
   };
 
+  const [thumbnail, setThumbnail] = useState("");
+
   const submitEquipment = (values) => {
+    values.thumbnail = thumbnail;
+    console.log(values);
     fetch(url + "/equipment/add", {
       method: "POST",
       body: JSON.stringify(values),
@@ -27,6 +32,22 @@ const AddEquipment = () => {
           title: "Registered Successfully!!",
         });
       });
+  };
+
+  const uploadThumbnail = (e) => {
+    console.log("file selected");
+
+    let file = e.target.files[0];
+    console.log(file.name);
+    setThumbnail(file.name);
+    let form = new FormData();
+    form.append("myfile", file);
+
+    fetch(url + "/util/uploadfile", { method: "POST", body: form }).then(
+      (res) => {
+        console.log(res.status);
+      }
+    );
   };
 
   return (
@@ -73,22 +94,21 @@ const AddEquipment = () => {
                       onChange={handleChange}
                       value={values.description}
                     ></TextField>
-                    <TextField
-                      className="w-100 mt-3"
-                      id="thumbnail"
-                      type="text"
-                      label="Thumbnail"
-                      onChange={handleChange}
-                      value={values.thumbnail}
-                    ></TextField>
-                    <TextField
-                      className="w-100 mt-3"
+
+                    <label className="mt-4">Upload Thumbnail</label>
+                    <input
+                      type="file"
+                      onChange={uploadThumbnail}
+                      className="form-control"
+                    />
+
+                    <Switch
                       id="rentablefield"
-                      type="text"
-                      label="RentableField"
+                      label="Equipment is Rentable"
                       onChange={handleChange}
                       value={values.rentablefield}
-                    ></TextField>
+                    ></Switch>
+                    <br />
 
                     <Button
                       type="submit"
