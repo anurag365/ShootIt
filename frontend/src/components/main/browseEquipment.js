@@ -1,12 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import { Formik } from 'formik'
-import { Button, Card, CardContent, CardMedia, Grid, Paper, TextField } from '@mui/material'
-import app_config from '../../config';
-import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Formik } from "formik";
+import {
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Container,
+  Grid,
+  Paper,
+  TextField,
+} from "@mui/material";
+import app_config from "../../config";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const BrowseEquipment = () => {
-
   const url = app_config.api_url;
 
   const [equipmentData, setEquipmentData] = useState([]);
@@ -54,21 +62,52 @@ const BrowseEquipment = () => {
     }
   };
 
+  const showEquipmentGrid = () => {
+    return (
+      <Container>
+        <Grid container>
+          <Grid item md={4}>
+            <Card>
+              <CardMedia
+                component="img"
+                image={url + "/images/Canon.png"}
+              ></CardMedia>
+              <CardContent>
+                <h2>Canon M50</h2>
+                <p>Nice Camera</p>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+      </Container>
+    );
+  };
+
   useEffect(() => {
-    
     fetchEquipment();
   }, []);
 
   return (
     <Paper style={{ height: "100vh" }}>
-      <div className="container">
-        <h1>Equipment List</h1>
-        <Grid container spacing={2}>
-          {displayEquipment()}
+      <header className="bg-warning">
+        <Container>
+          <h1>Browse Equipment</h1>
+          <TextField
+            label="Search Equipment"
+            variant="outlined"
+            className="w-100"
+          />
+        </Container>
+      </header>
+
+      <Container>
+        <Grid item md={3}></Grid>
+        <Grid item md={9}>
+          {showEquipmentGrid()}
         </Grid>
-      </div>
+      </Container>
     </Paper>
   );
-}
+};
 
 export default BrowseEquipment;
