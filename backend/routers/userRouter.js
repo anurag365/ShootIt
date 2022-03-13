@@ -17,7 +17,7 @@ router.post("/add", (req, res) => {
 router.get("/getall", (req, res) => {
   Model.find({})
     .then((data) => {
-      console.log("user data saved!!");
+      console.log("user data fetched !!");
       res.status(200).json(data);
     })
     .catch((err) => {
@@ -29,7 +29,7 @@ router.get("/getall", (req, res) => {
 router.get("/getbyid/:id", (req, res) => {
   Model.findById(req.params.id)
     .then((data) => {
-      console.log("user data saved!!");
+      console.log("user data saved by Id!!");
       res.status(200).json(data);
     })
     .catch((err) => {
