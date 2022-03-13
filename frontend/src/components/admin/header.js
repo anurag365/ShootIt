@@ -63,6 +63,34 @@ const Header = () => {
                         Contact Us
                       </NavLink>
                     </li>
+                      <li className="nav-item">
+                      <NavLink
+                        className="nav-link"
+                        activeclassName="menu_active"
+                        to="/admin/addEquipment"
+                      >
+                        AddEquipment
+                      </NavLink>
+                     </li>
+                     <li className="nav-item">
+                      <NavLink
+                        className="nav-link btn-style"
+                        activeclassName="menu_active"
+                        to="/main/browseEquipment"
+                      >
+                        BrowseEquipment
+                      </NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink
+                        className="nav-link btn-style"
+                        activeclassName="menu_active"
+                        to="/main/viewEquipment"
+                      >
+                        ViewEqiupment
+                      </NavLink>
+                    </li>
+                    
                   </ul>
                   <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
                     <li className="nav-item">
