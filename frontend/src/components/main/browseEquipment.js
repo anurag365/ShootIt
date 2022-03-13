@@ -35,11 +35,11 @@ const BrowseEquipment = () => {
       return (
         <Grid container spacing={5}>
           {equipmentData.map((equipment) => (
-            <Grid item md={3}>
+            <Grid item md={4}>
               <Card>
                 <CardMedia
                   component="img"
-                  image={url + "/" + equipment.thumbnail}
+                  image={url + "/uploads/" + equipment.thumbnail}
                   height="200"
                 />
                 <CardContent>
@@ -103,7 +103,7 @@ const BrowseEquipment = () => {
       <Container>
         <Grid item md={3}></Grid>
         <Grid item md={9}>
-          {showEquipmentGrid()}
+          {displayEquipment()}
         </Grid>
       </Container>
     </Paper>
