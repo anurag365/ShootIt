@@ -14,12 +14,13 @@ code {
 
 .pricebtn {
   margin-left: 20%;
-  float: right;
+  float: right ;
   margin-left: 330px;
 }
 .pricingcard {
   margin-left: 2%;
 }
 .sideimage {
-  margin-right: 600px;
+  height: 122px;
+  width: 122px;
 }

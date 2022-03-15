@@ -1,5 +1,5 @@
 import { Card, CardContent, Grid, Container, Button } from "@mui/material";
-import { width } from "@mui/system";
+
 import React from "react";
 import app_config from "../../config";
 import "../../index.css";
@@ -11,7 +11,7 @@ const ViewEqiupment = () => {
       <Container className="mt-5">
         <Card>
           <CardContent>
-            <Grid container>
+            <Grid container spacing={2}>
               <Grid item md={6} className="pricingcard">
                 <h1>Cannon M50 MK2</h1>
                 <p>
@@ -29,12 +29,17 @@ const ViewEqiupment = () => {
                   Price ${" "}
                 </Button>
               </Grid>
-              <Grid item md={3}>
-                <img src={url + "/images/cannon.jpeg"}  />
-                <Grid item md={3} className="sideimage" style={{ height: "50px", width: "60px"}}>
-                  <img src={url + "/images/cannon.jpeg"} />
-                </Grid>
+              <Grid item md={4}  >
+                <img src={url + "/images/cannon.jpeg"}  />   
               </Grid>
+              <Grid  item md={2} direction="column" height="122px" width="122px" className="sideimage">
+                  <img src={url + "/images/cannon.jpeg"} />  
+                  <Grid>
+                  <img src={url + "/images/cannon.jpeg"} />   
+              </Grid> 
+              </Grid>
+             
+           
             </Grid>
           </CardContent>
         </Card>
