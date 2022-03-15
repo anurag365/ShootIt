@@ -6,6 +6,7 @@ const cors = require("cors");
 
 const userRouter = require("./routers/userRouter");
 const equipmentRouter = require("./routers/equipmentRouter");
+const utilRouter = require("./routers/utils");
 
 app.use(
   cors({
@@ -16,6 +17,9 @@ app.use(express.json());
 
 app.use("/user", userRouter);
 app.use("/equipment", equipmentRouter);
+app.use("/util", utilRouter);
+
+app.use(express.static("./static"));
 
 app.use(express.static('./static'));
 
