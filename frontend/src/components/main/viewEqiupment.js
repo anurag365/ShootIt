@@ -29,17 +29,16 @@ const ViewEqiupment = () => {
                   Price ${" "}
                 </Button>
               </Grid>
-              <Grid item md={4}  >
+              <Grid item  md={4} >
                 <img src={url + "/images/cannon.jpeg"}  />   
               </Grid>
-              <Grid  item md={2} direction="column" height="122px" width="122px" className="sideimage">
-                  <img src={url + "/images/cannon.jpeg"} />  
-                  <Grid>
-                  <img src={url + "/images/cannon.jpeg"} />   
-              </Grid> 
+              <Grid item md={2}>
+              <h3>xs=2</h3>
+                <Grid>
+                <h3>xs=2</h3>
               </Grid>
-             
-           
+              </Grid>
+              
             </Grid>
           </CardContent>
         </Card>
